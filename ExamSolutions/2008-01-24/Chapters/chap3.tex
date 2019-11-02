@@ -1,1 +1,246 @@
-\section{ parabolic orbits hyperbolic orbits:sun astroid earth hyperbolic  }\label{sec:q3}    
+\section{Hyperbolic flyby trajectory of asteroid about Earth}\label{sec:q3}    
+
+Given is:
+
+\begin{itemize}
+    \item $r_{t_{0}}$ = 900,000 km
+    \item $\dot{r}$ = -5.4638 km/s
+    \item $r\dot{\theta}$ = -0.0920 km/s
+\end{itemize}
+
+\noindent \textbf{a) Compute, for the specified values of the velocity components at $t_{0}$, the semi-major axis $a$ and eccentricity $e$ of the flyby trajectory and the true anomaly $\theta$ at $t_{0}$. In the analysis, the Equations \ref{eq:q2_5} and \ref{eq:q2_6} of Problem 2 may be used. To obtain accurate results, all parameters have to be computed in at least six digits.}
+
+\bigskip
+
+\noindent \textit{This calculation is taken from \cite{wakker} page 137 and 192.}
+
+\bigskip
+
+\noindent First, the semi-major axis is calculated from:
+
+%===========================================
+\begin{equation}
+    V^2 = \mu \Bigg( \frac{2}{r} - \frac{1}{a} \Bigg)
+    \tag{6.21\cite{wakker}}
+    \label{eq:q3_a1}
+\end{equation}
+%===========================================
+
+\noindent Rearranging for $a$:
+
+%===========================================
+\begin{equation}
+    a = \frac{\mu/2}{\mu/r - V^2/2} = \frac{398,600.4/2}{398,600.4/900,000 - 5.464574^2/2} = \boldsymbol{-13,756.322798 [km]}
+    \label{eq:q3_a2}
+\end{equation}
+%===========================================
+
+\noindent With $V$:
+
+%===========================================
+\begin{equation}
+    V = \sqrt{\dot{r}^2 + r\dot{\theta}^2} = \sqrt{(-5.4638)^2 + (-0.0920)^2} = 5.464574 [km]
+    \label{eq:q3_a3}
+\end{equation}
+%===========================================
+
+\noindent Note that $a$ can also be calculated using:
+
+%===========================================
+\begin{equation}
+    a = - \frac{\mu}{2\varepsilon}
+    \label{eq:q3_a4}
+\end{equation}
+%===========================================
+
+\noindent Now, the eccentricity is calculated:
+
+%===========================================
+\begin{equation}
+    e = \sqrt{1 + 2 \frac{H^2 \varepsilon}{\mu^2}} = \sqrt{1 + 2 \frac{(-82,800)^2 \cdot 14.487898}{398,600.4^2}} = \boldsymbol{1.500106 [-]}
+    \tag{8.9\cite{wakker}}
+    \label{eq:q3_a5}
+\end{equation}
+%===========================================
+
+\noindent Where:
+
+%===========================================
+\begin{equation}
+    \varepsilon = \frac{V^2}{2} - \frac{\mu}{r} = \frac{5.464574^2}{2} - \frac{398,600.4}{900,000} = 14.487898 [km^2/s^2]
+    \tag{8.7\cite{wakker}}
+    \label{eq:q3_a6}
+\end{equation}
+%===========================================
+
+\noindent And from Equation \ref{eq:q2_6} for $H$:
+
+%===========================================
+\begin{equation}
+    H = r\dot{\theta} r = -0.0920 \cdot 900,000 = -82,800 [km^2/s]
+    \label{eq:q3_a7}
+\end{equation}
+%===========================================
+
+\noindent Lastly, the true anomaly $\theta$ is calculated using Equation \ref{eq:q2_6}:
+
+%===========================================
+\begin{equation}
+    \theta = \arccos{\frac{\big( \frac{r \dot{\theta} H}{\mu} -1 \big)}{e}} = \arccos{\frac{\big( \frac{(-0.0920) \cdot (-82,800)}{398,600.4} -1 \big)}{1.500106}} = \boldsymbol{2.283497 [rad] = 130.834768 [deg]}
+    \label{eq:q3_a8}
+\end{equation}
+%===========================================
+
+
+
+
+
+
+
+
+
+
+\noindent \textbf{b) Compute the minimum altitude of the asteroid in its flyby trajectory about the Earth, and compute the velocity of the asteroid relative to the Earth at the time of closest approach.}
+
+\bigskip
+
+\noindent \textit{This calculation is taken from \cite{wakker} page 192-193.}
+
+\bigskip
+
+\noindent The perigee distance is calculated using:
+
+%===========================================
+\begin{equation}
+    r_{p} = a(1 - e) = (-13,756.322798) \cdot (1 - 1.500106) = 6879.620861 [km]
+    \tag{8.6\cite{wakker}}
+    \label{eq:q3_a9}
+\end{equation}
+%===========================================
+
+\noindent The perigee height is:
+
+%===========================================
+\begin{equation}
+    h_{p} = r_{p} - R_{E} = 6879.620861 - 6378.14 = \boldsymbol{501.480861 [km]}
+    \label{eq:q3_a10}
+\end{equation}
+%===========================================
+
+\noindent The perigee velocity is:
+
+%===========================================
+\begin{equation}
+    V_{p} = \sqrt{ \frac{\mu}{-a} \Bigg( \frac{e + 1}{e - 1} \Bigg)} = \sqrt{ \frac{398,600.4}{13,756.322798} \Bigg( \frac{1.500106 + 1}{1.500106 - 1} \Bigg)} = \boldsymbol{12.035547 [km/s]}
+    \tag{8.11\cite{wakker}}
+    \label{eq:q3_a11}
+\end{equation}
+%===========================================
+
+
+
+
+
+
+
+
+
+
+\noindent \textbf{c) Compute the time-interval from $t_{0}$ to the time of closest approach of the Earth. For this analysis, the given relations may be used.}
+
+\bigskip
+
+\noindent Starting with:
+
+%===========================================
+\begin{equation}
+    \tan{\frac{\theta}{2}} = \sqrt{\frac{e + 1}{e - 1}}\tanh{\frac{F}{2}}
+    \tag{8.20\cite{wakker}}
+    \label{eq:q3_a12}
+\end{equation}
+%===========================================
+
+\noindent Solving for $F$:
+
+%===========================================
+\begin{equation}
+    F = 2 \arctan h{\frac{\theta}{2}} \sqrt{\frac{e - 1}{e + 1}}= 2 \arctan h{\frac{2.283497}{2}} \sqrt{\frac{1.500106 - 1}{1.500106 + 1}} = 4.483549 [rad]
+    \label{eq:q3_a13}
+\end{equation}
+%===========================================
+
+\noindent Now, the time-interval can be calculated using:
+
+%===========================================
+\begin{equation}
+    e \sinh{F} - F = sqrt{ \frac{\mu}{-a^3} } (t - \tau) 
+    \tag{8.23-1\cite{wakker}}
+    \label{eq:q3_a14}
+\end{equation}
+%===========================================
+
+\noindent Solving for $(t - \tau)$:
+
+%===========================================
+\begin{equation}
+    (t - \tau) = (e \sinh{F} - F) \sqrt{ \frac{-a^3}{\mu} } = \boldsymbol{158,249.908133 [s] = 43.958308 [h]}
+    \label{eq:q3_a15}
+\end{equation}
+%===========================================
+
+
+
+
+
+
+
+
+
+
+\noindent \textbf{d) After the asteroid has passed the Earth, it continues its flight along the hyperbolic trajectory. Compute the velocity of the asteroid at an infinitely large distance from the Earth (relative to the Earth), $V_{\infty}$, and compute the radial and normal components of the velocity (relative to the Earth) at that moment.}
+
+\bigskip
+
+\noindent Starting with calculating $V_{\infty}$:
+
+%===========================================
+\begin{equation}
+    V_{\infty} = \sqrt{- \frac{\mu}{a}} = \sqrt{- \frac{398,600.4}{-13,756.322798}} = \boldsymbol{5.382917 [km/s]}
+    \tag{8.12\cite{wakker}}
+    \label{eq:q3_a16}
+\end{equation}
+%===========================================
+
+\noindent Calculating the normal and radial velocity respectively:
+
+%===========================================
+\begin{equation}
+    V_{l} = \frac{\mu e}{H} = \boldsymbol{-7.221532 [km/s]}
+    \tag{5.30a\cite{wakker}}
+    \label{eq:q3_a17}
+\end{equation}
+%===========================================
+
+%===========================================
+\begin{equation}
+    V_{n} = \frac{\mu}{H} = \boldsymbol{-4.814014 [km/s]}
+    \tag{5.30b\cite{wakker}}
+    \label{eq:q3_a18}
+\end{equation}
+%===========================================
+
+\noindent Note that $V_{l}$ and $V_{n}$ can also be calculated using:
+
+%===========================================
+\begin{equation}
+    V_{l} = \frac{\dot{r}}{\sin{\theta}}
+    \label{eq:q3_a19}
+\end{equation}
+%===========================================
+
+%===========================================
+\begin{equation}
+    V_{n} = r\dot{\theta} - \frac{\dot{r}}{\tan{\theta}}
+    \label{eq:q3_a20}
+\end{equation}
+%===========================================
